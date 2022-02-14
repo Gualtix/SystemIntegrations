@@ -31,7 +31,9 @@ public class HelloSoapClient {
             SOAPConnection soapConnection = soapConnectionFactory.createConnection();
 
             // Send SOAP Message to SOAP Server
-            String url = "http://localhost:8080/ws";
+            //String url = "http://localhost:8080/ws";
+            String url = "http://localhost:8080/orders/ordersservice";
+            /*
             String soapMessage = 
             "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:gs=\"http://spring.io/guides/gs-producing-web-service\">"+
             "   <soapenv:Header/>"+
@@ -41,6 +43,21 @@ public class HelloSoapClient {
             "      </gs:getCountryRequest>"+
             "   </soapenv:Body>"+
             "</soapenv:Envelope>";
+            */
+
+            int OrderNumber = 35;
+
+            String soapMessage = 
+
+            "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ord=\"http://www.example.org/OrdersWSDLFile/\">"+
+            "   <soapenv:Header/>"+
+            "   <soapenv:Body>"+
+            "      <ord:getOrderRequest>"+
+            "         <orderId>"+OrderNumber+"</orderId>"+
+            "      </ord:getOrderRequest>"+
+            "   </soapenv:Body>"+
+            "</soapenv:Envelope>";
+            
             SOAPMessage soapResponse = soapConnection.call(getSoapMessageFromString(soapMessage), url);
 
             // Process the SOAP Response
