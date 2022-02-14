@@ -15,10 +15,10 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 
-// Credits:
+
 // http://stackoverflow.com/questions/19291283/soap-request-to-webservice-with-java
 // http://stackoverflow.com/questions/13180372/creating-a-soapmessage-from-string-xml-of-entire-soap-message
-//
+// https://gist.github.com/gliviu/48395c47fefe9cf2a8fb
 public class HelloSoapClient {
 
     /**
