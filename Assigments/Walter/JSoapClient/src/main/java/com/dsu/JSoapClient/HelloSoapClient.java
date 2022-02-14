@@ -32,7 +32,7 @@ public class HelloSoapClient {
 
             // Send SOAP Message to SOAP Server
             //String url = "http://localhost:8080/ws";
-            String url = "http://localhost:8080/orders/ordersservice";
+            String url = "http://localhost:8080/orders/ordersservice?wsdl";
             /*
             String soapMessage = 
             "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:gs=\"http://spring.io/guides/gs-producing-web-service\">"+
