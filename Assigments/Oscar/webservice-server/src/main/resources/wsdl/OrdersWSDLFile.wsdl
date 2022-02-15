@@ -35,6 +35,9 @@
 			<xsd:complexType name="getOrderRequest">
 				<xsd:sequence>
 					<xsd:element name="orderId" type="xsd:string" />
+					<xsd:element name="orderStatus" type="tns:status" />
+					<xsd:element name="orderDate" type="xsd:date" />
+					<xsd:element name="customerName" type="xsd:string" />
 				</xsd:sequence>
 			</xsd:complexType>
 			<xsd:complexType name="getOrderResponse">
