@@ -1,9 +1,13 @@
 # SystemIntegrations
 
-## Assignment: WebServices Client - Order Status Tracker (16/02/2022)
+## Assignment: WebServices Client/Server - Order Status Tracker (16/02/2022)
 
-- F
+### Java Soap Cliente (Walter Roberto Morales)
 
-
-- [Source Code](https://github.com/Gualtix/ApplicationDesign/tree/main/Java%20Collections)
-- [Project Executable](https://github.com/Gualtix/ApplicationDesign/tree/main/Java%20Collections/Project/target)
+- First up the server
+- Go to: Assigments/Walter/JeiSoapCon
+- execute: mvn clean install
+- Go to: target
+- Execute: java -jar JSoapClient-jar-with-dependencies.jar
+- [Source Code](https://github.com/Gualtix/SystemIntegrations/tree/main/Assigments/Walter/JeiSoapCon/src/main/java/com/mycompany/jeisoapcon)
+- [Project Executable](https://github.com/Gualtix/SystemIntegrations/tree/main/Assigments/Walter/JeiSoapCon/target)
