@@ -1,4 +1,4 @@
-/*
+
 package com.dsu.JSoapClient;
 
 import org.springframework.context.annotation.Bean;
@@ -20,8 +20,8 @@ public class CountryConfiguration {
   }
 
   @Bean
-  public CountryClient countryClient(Jaxb2Marshaller marshaller) {
-    CountryClient client = new CountryClient();
+  public OrderClient countryClient(Jaxb2Marshaller marshaller) {
+    OrderClient client = new OrderClient();
     //client.setDefaultUri("http://localhost:8080/ws");
     client.setDefaultUri("http://localhost:8080/orders/ordersservice?wsdl");
     client.setMarshaller(marshaller);
@@ -30,4 +30,3 @@ public class CountryConfiguration {
   }
 
 }
-*/

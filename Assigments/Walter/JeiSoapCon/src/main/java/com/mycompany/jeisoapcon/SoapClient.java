@@ -6,7 +6,6 @@ import java.io.StringWriter;
 import java.nio.charset.Charset;
 import java.util.LinkedList;
 
-
 import javax.xml.soap.MessageFactory;
 import javax.xml.soap.MimeHeaders;
 import javax.xml.soap.SOAPConnection;
@@ -49,26 +48,25 @@ class Order {
         for (Product p : products) {
             System.out.println("\t id: " + p.id + " quantity: " + p.quantity + " price: " + p.price);
         }
-
     }
 
-    public String getXmlString_NewOrder(String orderId, String orderDate, String custumerName, String orderStatus) {
-        /*
-         * String xml =
-         * "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ord=\"http://www.example.org/OrdersWSDLFile/\">"
-         * + "   <soapenv:Header/>"
-         * + "   <soapenv:Body>"
-         * + "      <ord:getOrderRequest>"
-         * + "         <orderId>" + orderId + "</orderId>"
-         * + "         <orderDate>" + orderDate + "</orderDate>"
-         * + "         <custumerName>" + custumerName + "</custumerName>"
-         * + "         <orderStatus>" + orderStatus + "</orderStatus>"
-         * + "      </ord:getOrderRequest>"
-         * + "   </soapenv:Body>"
-         * + "</soapenv:Envelope>";
-         * return xml;
-         */
+    public String getXmlString_NewOrder(String orderId, String orderDate, String custumerName, String orderStatus) 
+    {
+        String xml =
+        "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ord=\"http://www.example.org/OrdersWSDLFile/\">"
+        + "   <soapenv:Header/>"
+        + "   <soapenv:Body>"
+        + "      <ord:getOrderRequest>"
+        + "         <orderId>" + orderId + "</orderId>"
+        + "         <orderDate>" + orderDate + "</orderDate>"
+        + "         <custumerName>" + custumerName + "</custumerName>"
+        + "         <orderStatus>" + orderStatus + "</orderStatus>"
+        + "      </ord:getOrderRequest>"
+        + "   </soapenv:Body>"
+        + "</soapenv:Envelope>";
+        return xml;
 
+        /*
         String xml = 
                 "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ord=\"http://www.example.org/OrdersWSDLFile/\">"
                 + "   <soapenv:Header/>"
@@ -79,6 +77,7 @@ class Order {
                 + "   </soapenv:Body>"
                 + "</soapenv:Envelope>";
         return xml;
+        */
     }
 }
 
@@ -133,40 +132,11 @@ public class SoapClient {
         SOAPMessage soapResponse = soapConnection.call(getSoapMessageFromString(XmlQuery), this.URI);
         String XML_String_Response = getXML_String(soapResponse);
 
-        String tmpse = "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">"
-        +"   <soap:Body>"
-        +"      <ns2:getOrderResponse xmlns:ns2=\"http://www.example.org/OrdersWSDLFile/\">"
-        +"         <orderId>524</orderId>"
-        +"         <orderStatus>STARTED</orderStatus>"
-        +"         <orderDate>2020-11-07-06:00</orderDate>"
-        +"         <customerName>Oscar</customerName>"
-        +"            <product>"
-        +"               <id>1</id>"
-        +"               <quantity>1</quantity>"
-        +"               <price>100</price>"
-        +"            </product>"
-        +"            <product>"
-        +"               <id>2</id>"
-        +"               <quantity>2</quantity>"
-        +"               <price>200</price>"
-        +"            </product>"
-        +"            <product>"
-        +"               <id>3</id>"
-        +"               <quantity>3</quantity>"
-        +"               <price>300</price>"
-        +"            </product>"
-        +"      </ns2:getOrderResponse>"
-        +"   </soap:Body>"
-        +"</soap:Envelope>";
-
         try {
             JSONObject jsonObject = XML.toJSONObject(XML_String_Response);
             JSONObject tmp = jsonObject.getJSONObject("soap:Envelope").getJSONObject("soap:Body").getJSONObject("ns2:getOrderResponse");
             Order ord = FillOrder(tmp);
             return ord;
-            // String jsonString = json.toString(4);
-            // System.out.println(jsonString);
-
         } catch (JSONException e) {
             System.out.println(e.toString());
         }
@@ -174,38 +144,6 @@ public class SoapClient {
     }
 
     public SoapClient() {
-
-        /*
-         * try
-         * {
-         * SOAPConnectionFactory soapConnectionFactory =
-         * SOAPConnectionFactory.newInstance();
-         * SOAPConnection soapConnection = soapConnectionFactory.createConnection();
-         * 
-         * String url = "http://localhost:8080/orders/ordersservice?wsdl";
-         * int OrderNumber = 35;
-         * String soapMessage =
-         * "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ord=\"http://www.example.org/OrdersWSDLFile/\">"
-         * + "   <soapenv:Header/>"
-         * + "   <soapenv:Body>"
-         * + "      <ord:getOrderRequest>"
-         * + "         <orderId>" + OrderNumber + "</orderId>"
-         * + "      </ord:getOrderRequest>"
-         * + "   </soapenv:Body>"
-         * + "</soapenv:Envelope>";
-         * 
-         * SOAPMessage soapResponse =
-         * soapConnection.call(getSoapMessageFromString(soapMessage), url);
-         * String XML_String = getXML_String(soapResponse);
-         * 
-         * 
-         * soapConnection.close();
-         * } catch (Exception e)
-         * {
-         * System.err.println("Error occurred while sending SOAP Request to Server");
-         * e.printStackTrace();
-         * }
-         */
 
     }
 
