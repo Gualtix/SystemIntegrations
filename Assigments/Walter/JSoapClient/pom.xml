@@ -65,7 +65,9 @@
 					<generatePackage>com.dsu.JSoapClient.wsdl</generatePackage>
 					<schemas>
 						<schema>
-							<url>http://localhost:8080/ws/countries.wsdl</url>
+							<!-- <url>http://localhost:8080/ws/countries.wsdl</url> -->
+							<!-- <url>https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL</url> -->
+							<url>http://localhost:8080/orders/ordersservice?wsdl=OrdersPortType.wsdl</url>
 						</schema>
 					</schemas>
 				</configuration>

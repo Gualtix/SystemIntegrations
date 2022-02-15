@@ -2,11 +2,15 @@
 package com.dsu.JSoapClient;
 
 import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Bean;
 
-import com.dsu.JSoapClient.wsdl.GetCountryResponse;
+//import com.dsu.JSoapClient.wsdl.GetCountryResponse;
+import com.dsu.JSoapClient.wsdl.GetOrderResponse;
+
 
 @SpringBootApplication
 public class JSoapClientApplication {
@@ -16,16 +20,18 @@ public class JSoapClientApplication {
 	}
 
 	@Bean
-	CommandLineRunner lookup(CountryClient quoteClient) {
+	CommandLineRunner lookup(OrderClient quoteClient) {
 		return args -> {
-		String country = "Spain";
+		String orderId = "1";
 
 		if (args.length > 0) {
-			country = args[0];
+			orderId = args[0];
 		}
-		GetCountryResponse response = quoteClient.getCountry(country);
-		System.err.println(response.getCountry().getCurrency());
+
+		GetOrderResponse response = quoteClient.getCustumer(orderId);
+		System.err.println(response.getCustomerName());
 		};
 	}
+	
 }
 
