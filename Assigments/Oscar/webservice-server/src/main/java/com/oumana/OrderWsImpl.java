@@ -41,7 +41,6 @@ public class OrderWsImpl implements OrdersPortType {
 			product.setPrice(Math.round(RANDOM.nextDouble(2000)*100.0)/100.0);
 			product.setQuantity(BigInteger.valueOf(RANDOM.nextInt(10)));
 			products.add(product);
-
 		}
 		return products.subList(0, RANDOM.nextInt(products.size() - 1) + 1);
 	}
