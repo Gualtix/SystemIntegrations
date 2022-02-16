@@ -21,3 +21,14 @@ pip install zeep
 python soap-client.py
 ```
 This is the [source code](https://github.com/Gualtix/SystemIntegrations/blob/main/Assigments/Sebastian/soap-client.py)
+
+### JAX-WS SOAP service (Oscar Rodolfo Umaña)
+
+- Go to: Assigments/Oscar/webservice-server
+- to execute the spring boot app you need to run:
+```
+mvn spring-boot:run
+```
+- If you're using spring tools, you can righ click on the project and run as Spring Boot App.
+- [Source Code](https://github.com/Gualtix/SystemIntegrations/blob/main/Assigments/Oscar/webservice-server/src/main/java/com/oumana/OrderWsImpl.java)
+- In order to test the service with SOAP UI you can use the following URI: "http://localhost:8080/orders/ordersservice?wsdl"
