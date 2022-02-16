@@ -36,8 +36,10 @@ public class OrderWsImpl implements OrdersPortType {
 	private static List<Product> getRandomProducts() {
 		List<Product> products = new ArrayList<>();
 		for (int i = 1; i < 100; i++) {
-			Product product = new Product(Integer.toString(i), Math.round(RANDOM.nextDouble(2000)*100.0)/100.0,
-					BigInteger.valueOf(RANDOM.nextInt(10)));
+			org.example.orderswsdlfile.Product product = new Product();
+			product.setId(Integer.toString(i));
+			product.setPrice(Math.round(RANDOM.nextDouble(2000)*100.0)/100.0);
+			product.setQuantity(BigInteger.valueOf(RANDOM.nextInt(10)));
 			products.add(product);
 
 		}
