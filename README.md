@@ -25,6 +25,10 @@ This is the [source code](https://github.com/Gualtix/SystemIntegrations/blob/mai
 ### JAX-WS SOAP service (Oscar Rodolfo Umaña)
 
 - Go to: Assigments/Oscar/webservice-server
+- Install the dependencies
+```
+mvn clean install
+```
 - to execute the spring boot app you need to run:
 ```
 mvn spring-boot:run
