@@ -27,8 +27,8 @@ print("""Enter status
 [0] STARTED
 [1] IN_PROGRESS
 [2] SHIPPED
-[3] COMPLETED :
-""")
+[3] COMPLETED""")
+
 status_index = int(input())
 status_index = 0 if status_index < 0 or status_index > 3 else status_index
 status = status_array[status_index]
